@@ -42,6 +42,12 @@ def filter_frequent_patterns(support_count, minsup):
 
 def spade_algorithm(data, minsup):
     sequence_data = preprocess_data(data)
+    item_counts = defaultdict(int)
+    for sequence in sequence_data:
+        for item in sequence:
+            item_counts[item] += 1
+    most_popular_item = max(item_counts, key=item_counts.get)
+    print("Mặt hàng phổ biến nhất:", most_popular_item, "với tần suất:", item_counts[most_popular_item])
     items = set(item for sequence in sequence_data for item in sequence)
     patterns = [[item] for item in items]
     frequent_patterns = {}
@@ -54,4 +60,4 @@ def spade_algorithm(data, minsup):
         patterns = generate_candidates(list(filtered_patterns.keys()), k)
         k += 1
 
-    return frequent_patterns
+    return frequent_patterns, most_popular_item

@@ -15,9 +15,12 @@ def process(request):
         request.session['uploaded_data'] = data.to_dict(orient='records')
         request.session['minsup'] = minsup
 
-        patterns = spade_algorithm(data, minsup)
+        patterns, most_popular_item = spade_algorithm(data, minsup)
 
-        return render(request, 'behavior_analysis/result.html', {'patterns': patterns})
+        return render(request, 'behavior_analysis/result.html', {
+            'patterns': patterns,
+            'most_popular_item': most_popular_item,
+        })
     return HttpResponse("Invalid request")
 
 def analyze_trends(data):
