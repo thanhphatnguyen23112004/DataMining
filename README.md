@@ -33,19 +33,9 @@
 
 ---
 ## **Cấu trúc dự án**
-customer_behavior/ 
-├── behavior_analysis/ 
-│ ├── templates/ 
-│ │ ├── behavior_analysis/ 
-│ │ ├── index.html # Giao diện nhập dữ liệu 
-│ │ ├── result.html # Giao diện hiển thị kết quả 
-│ ├── spade_algorithm.py # Thuật toán SPADE 
-│ ├── views.py # Xử lý logic ứng dụng 
-│ ├── urls.py # Định tuyến URL ├── customer_behavior/ 
-│ ├── settings.py # Cấu hình dự án 
-│ ├── urls.py # URL chính của dự án 
-├── manage.py # Công cụ quản lý Django 
-├── Groceries 1.csv
+Dưới đây là cấu trúc thư mục của dự án:
+
+![Cấu trúc dự án](project_structure.png)
 
 ---
 
